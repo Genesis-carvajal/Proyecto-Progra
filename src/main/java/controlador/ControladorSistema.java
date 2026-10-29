@@ -36,4 +36,15 @@ public class ControladorSistema {
         System.exit(0);
     }//Fin del método Salir.
     
+    public void abrirJuego(){
+        menu.setVisible(false);
+        juego.setLocationRelativeTo(null);
+        juego.setVisible(true);
+    }//Fin del método abrirJuego.
+    
+    public void menuAnterior(){
+        GUI_Juego volver = new GUI_Juego();
+        
+    }//Fin del método menuAnterior.
+    
 }//Fin de la clase ControladorSistema.

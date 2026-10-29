@@ -65,22 +65,25 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblNombreJuego">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
+            <Property name="text" type="java.lang.String" value="Loopi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnJugar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton1"/>
+            <Property name="text" type="java.lang.String" value="Jugar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJugarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnInstrucciones">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton2"/>
+            <Property name="text" type="java.lang.String" value="Instrucciones"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalir">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton3"/>
+            <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>

@@ -42,13 +42,14 @@ public class GUI_Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblNombreJuego.setText("jLabel1");
+        lblNombreJuego.setText("Loopi");
 
-        btnJugar.setText("jButton1");
+        btnJugar.setText("Jugar");
+        btnJugar.addActionListener(this::btnJugarActionPerformed);
 
-        btnInstrucciones.setText("jButton2");
+        btnInstrucciones.setText("Instrucciones");
 
-        btnSalir.setText("jButton3");
+        btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
 
         javax.swing.GroupLayout pnlPanelLayout = new javax.swing.GroupLayout(pnlPanel);
@@ -86,6 +87,10 @@ public class GUI_Menu extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         controlador.Salir();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
+        controlador.abrirJuego();
+    }//GEN-LAST:event_btnJugarActionPerformed
 
     /**
      * @param args the command line arguments
