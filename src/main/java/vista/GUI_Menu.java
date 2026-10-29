@@ -33,32 +33,69 @@ public class GUI_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlPanel = new javax.swing.JPanel();
+        lblNombreJuego = new javax.swing.JLabel();
+        btnJugar = new javax.swing.JButton();
+        btnInstrucciones = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        lblNombreJuego.setText("jLabel1");
+
+        btnJugar.setText("jButton1");
+
+        btnInstrucciones.setText("jButton2");
+
+        btnSalir.setText("jButton3");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
+
+        javax.swing.GroupLayout pnlPanelLayout = new javax.swing.GroupLayout(pnlPanel);
+        pnlPanel.setLayout(pnlPanelLayout);
+        pnlPanelLayout.setHorizontalGroup(
+            pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPanelLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalir)
+                    .addComponent(btnInstrucciones)
+                    .addComponent(btnJugar)
+                    .addComponent(lblNombreJuego))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        pnlPanelLayout.setVerticalGroup(
+            pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblNombreJuego)
+                .addGap(66, 66, 66)
+                .addComponent(btnJugar)
+                .addGap(18, 18, 18)
+                .addComponent(btnInstrucciones)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(pnlPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        controlador.Salir();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnInstrucciones;
+    private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel lblNombreJuego;
+    private javax.swing.JPanel pnlPanel;
     // End of variables declaration//GEN-END:variables
 }

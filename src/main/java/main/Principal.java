@@ -4,6 +4,8 @@
 
 package main;
 
+import controlador.ControladorSistema;
+
 /**
  *
  * @author carva
@@ -11,7 +13,7 @@ package main;
 public class Principal {
 
     public static void main(String[] args) {
-        Menu m = new Menu();
-        m.menuPrincipal();
+        ControladorSistema controlador = new ControladorSistema();
+        controlador.Iniciar();
     }
 }

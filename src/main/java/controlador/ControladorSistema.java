@@ -25,6 +25,15 @@ public class ControladorSistema {
         menu.setControlador(this);
         juego.setControlador(this);
         fin.setControlador(this);
-    }//Fin del constructor
+    }//Fin del constructor.
+    
+    public void Iniciar(){
+        menu.setLocationRelativeTo(null); //Nos permite que al ejecutar el juego se centre la ventana.
+        menu.setVisible(true); //Un método que hace que se vea la ventana sí es true.
+    }//Fin del método Iniciar.
+    
+    public void Salir(){
+        System.exit(0);
+    }//Fin del método Salir.
     
 }//Fin de la clase ControladorSistema.

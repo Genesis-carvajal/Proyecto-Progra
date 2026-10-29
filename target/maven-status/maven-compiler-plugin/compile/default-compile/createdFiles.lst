@@ -1,4 +1,6 @@
 main\Menu.class
 main\Principal.class
+controlador\ControladorSistema.class
 vista\GUI_Juego.class
-vista\GUI_Vista.class
+vista\GUI_Fin.class
+vista\GUI_Menu.class
