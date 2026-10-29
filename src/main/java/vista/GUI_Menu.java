@@ -4,20 +4,26 @@
  */
 package vista;
 
+import controlador.ControladorSistema;
+
 /**
  *
  * @author carva
  */
-public class GUI_Vista extends javax.swing.JFrame {
-    
-    
+public class GUI_Menu extends javax.swing.JFrame {
+    private ControladorSistema controlador;
+   
     /**
-     * Creates new form GUI_Vista
+     * Creates new form GUI_Menu
      */
-    public GUI_Vista() {
+    public GUI_Menu() {
         initComponents();
     }
 
+    public void setControlador(ControladorSistema controlador) {
+        this.controlador = controlador;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,20 +36,17 @@ public class GUI_Vista extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setPreferredSize(new java.awt.Dimension(900, 650));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -54,7 +57,6 @@ public class GUI_Vista extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;

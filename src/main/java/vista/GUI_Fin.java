@@ -4,12 +4,14 @@
  */
 package vista;
 
+import controlador.ControladorSistema;
+
 /**
  *
  * @author carva
  */
 public class GUI_Fin extends javax.swing.JFrame {
-    
+    private ControladorSistema controlador;
    
     /**
      * Creates new form GUI_Fin
@@ -17,6 +19,11 @@ public class GUI_Fin extends javax.swing.JFrame {
     public GUI_Fin() {
         initComponents();
     }
+    
+    public void setControlador(ControladorSistema controlador) {
+        this.controlador = controlador;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
