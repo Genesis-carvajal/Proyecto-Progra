@@ -9,5 +9,5 @@ package modelo;
  * @author carva
  */
 public class setygets {
-    
+ //Clase preliminar de setsygets.   
 }

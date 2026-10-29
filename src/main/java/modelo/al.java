@@ -9,5 +9,5 @@ package modelo;
  * @author carva
  */
 public class al {
-    
+    //Clase preliminar de ArrayList.
 }
