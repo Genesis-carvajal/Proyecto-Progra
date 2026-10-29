@@ -9,5 +9,11 @@ package main;
  * @author carva
  */
 public class Menu {
+    private int opcion;
     
-}
+    public void menuPrincipal(){
+//        do {
+//            
+//        }(while != 9);
+    }//Fin del método menuPrincipal.
+}//Fin de la clase Menu.
