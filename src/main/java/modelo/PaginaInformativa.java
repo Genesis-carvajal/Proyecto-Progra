@@ -8,6 +8,6 @@ package modelo;
  *
  * @author carva
  */
-public class PaginaInformativa {
+public abstract class PaginaInformativa extends Pagina{
     
 }
