@@ -9,32 +9,23 @@ package modelo;
  * @author carva
  */
 public abstract class PaginaActividad extends Pagina{
- //  BancoPreguntas
-    //Arreglo tipo bidimensional tipo Pregunta.
-    private Pagina[][] pagina = new Pagina[3][3];
 
-    public PaginaActividad() {
-        cargarPreguntas();
+    private String contenido;
+    
+    public PaginaActividad(String titulo, int numeroPagina, String contenido) {
+        super(titulo, numeroPagina, contenido);
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
     
-    
-    
-    public void cargarPreguntas(){
-//        //Pregunta selección multiple
-//        String[] opciones1 = {"Aquí van las respuestas"};
-//        pagina[0][0] = new NombreClaseHija(opciones1,"Respuesta correcta","Pregunta");
-//     
-//        //Pregunta verdadero falso
-//        pagina[0][1] = new NombreClaseHija(true, "Pregunta");
+    @Override
+    public void mostrarContenido(){
         
-        //Pregunta arrastrar.
-        ///NombreClaseHija podría ser un Banco de Preguntas
-//        pagina[0][2] = new NombreClaseHija("Nombre", "Nombre", "Lleve el coso hasta su casilla correcta");
-//        
-    }
-    
-    //Recibir preguntas de CLASE pREGUNTA
-    public Pagina obtenerPregunta(int capitulo, int numeroPregunta){
-        return pagina[capitulo][numeroPregunta];
     }
 }

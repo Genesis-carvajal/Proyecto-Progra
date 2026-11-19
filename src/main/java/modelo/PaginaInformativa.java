@@ -10,4 +10,24 @@ package modelo;
  */
 public abstract class PaginaInformativa extends Pagina{
     
+    private String contenido;
+    
+    //Constructor.
+    public PaginaInformativa(String titulo, int numeroPagina, String contenido) {
+        super(titulo, numeroPagina, contenido);
+    }
+    
+    //SETS y GETS.
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+ 
+    @Override
+    public void mostrarContenido() {
+
+    }
 }
