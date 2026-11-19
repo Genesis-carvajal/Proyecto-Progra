@@ -8,6 +8,24 @@ package modelo;
  *
  * @author carva
  */
-public class PaginaActividad {
- //  
+public abstract class PaginaActividad extends Pagina{
+
+    private String contenido;
+    
+    public PaginaActividad(String titulo, int numeroPagina, String contenido) {
+        super(titulo, numeroPagina, contenido);
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+    
+    @Override
+    public void mostrarContenido(){
+        
+    }
 }
