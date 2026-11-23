@@ -46,5 +46,5 @@ public abstract class Pagina {
     }
     
     
-    public abstract void mostrarContenido();
+    public abstract String mostrarContenido();
 }

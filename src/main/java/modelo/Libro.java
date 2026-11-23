@@ -4,43 +4,28 @@
  */
 package modelo;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-
+import modelo.Pagina;
 /**
  *
- * @author User
+ * @author Monserrath
  */
+import java.util.ArrayList;
+
 public class Libro {
-    
-    private ArrayList<Pagina>Paginas=new ArrayList<>();
-    
-    public void AgregarPag(Pagina pagina){
-    
-    Paginas.add(pagina);
-    
-    }
-    
-    public Pagina CondultarPag(int posicion) {
-        if (posicion < 0 || posicion >= Paginas.size()) {
+    private ArrayList<Pagina> paginas = new ArrayList<>();
 
-            JOptionPane.showMessageDialog(null, "la pagina no existe ");
-            return null;
-        }
-        return Paginas.get(posicion);
+    public void agregarPagina(Pagina pagina) {
+        paginas.add(pagina);
     }
-   
-    public String MostrarPags() {
-        String contenido = "";
-        for (int i = 0; i < Paginas.size(); i++) {
-            contenido += Paginas.get(i).MostrarContenido()+ "\n\n";
-           
-        }
-        return contenido;
 
+    public int cantidadPaginas() {
+        return paginas.size();
     }
-    public int Disponibles() {
-        return Paginas.size();
+
+    public Pagina obtenerPagina(int posicion) throws PaginaNoExisteException {
+        if (posicion < 0 || posicion >= paginas.size()) {
+            throw new PaginaNoExisteException("Esa página no existe.");
+        }
+        return paginas.get(posicion);
     }
-    
 }

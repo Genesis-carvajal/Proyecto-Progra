@@ -4,28 +4,23 @@
  */
 package modelo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author carva
  */
 public abstract class PaginaActividad extends Pagina{
-
-    private String contenido;
     
     public PaginaActividad(String titulo, int numeroPagina, String contenido) {
         super(titulo, numeroPagina, contenido);
     }
-
-    public String getContenido() {
-        return contenido;
-    }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
-    }
     
     @Override
-    public void mostrarContenido(){
-        
+    public String mostrarContenido(){
+        //Orden dada al usuario.
+        return  "Pagina " + getNumeroPagina() + ": " + getTitulo()
+                + "\n\n" + getContenido()
+                + "\n\nPresione RESPONDER para contestar tres preguntas.";
     }
 }

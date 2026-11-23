@@ -25,6 +25,11 @@ public class GUI_Juego extends javax.swing.JFrame {
         this.controlador = controlador;
     }
     
+    public void mostrarError(String mensaje) {
+    javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Aviso",
+            javax.swing.JOptionPane.WARNING_MESSAGE);
+}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
