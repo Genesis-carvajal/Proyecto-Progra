@@ -1,0 +1,5 @@
+modelo\RespuestaInvalidaException.class
+modelo\Arreglos.class
+modelo\PaginaNoExisteException.class
+modelo\BancoPreguntas.class
+modelo\IntentoFueraDeRangoException.class
