@@ -4,37 +4,6 @@
  */
 package modelo;
 
-<<<<<<< HEAD
-/**
- *
- * @author User
- */
-public class Arreglos {
-  
-    //Arreglo unidimensional para almacenar las respuestas correctas de 3 preguntas.
-    private int[] respuestasCorrectas = {2, 1, 3};
-    //Arreglo tipo bidimensional para almacenar los intentos realizados.
-    private int[][] historial = new int[3][3];
-    
-        
-    public void registrarRespuestas(){
-        for (int i = 0; i < respuestasCorrectas.length; i++){
-            
-        }
-    }
-    
-        
-    public void registrarIntentos(){
-        for (int i = 0; i < historial.length; i++){
-            for (int j = 0; j < 3; j++){
-                
-            }
-        }
-    }
-}
-    
-
-=======
 import java.util.ArrayList;
 
 /**
@@ -91,4 +60,4 @@ public class Arreglos {
         return historial[numeroIntento - 1];
     }
 }
->>>>>>> f8e1ab6dac1b2dab9e795983cf54d8eee27bf0bf
+

@@ -42,10 +42,14 @@
         <Component class="javax.swing.JRadioButton" name="rbOrganico">
           <Properties>
             <Property name="selected" type="boolean" value="true"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Contenedor_verde_de_reciclaje_org&#xe1;nico-removebg-preview (1)_1.png"/>
+              <Image iconType="3" name="/resources/contenedorOrganicoVerde.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbOrganicoActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="210" y="240" width="-1" height="-1"/>
@@ -54,10 +58,14 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbPlastico">
           <Properties>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Contenedor_de_reciclaje_para_pl&#xe1;stico__1_-removebg-preview (2).png"/>
+              <Image iconType="3" name="/resources/contenedorAmarilloPlastico.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbPlasticoActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="60" y="240" width="-1" height="-1"/>
@@ -66,10 +74,14 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbPapel">
           <Properties>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Contenedor_azul_de_reciclaje_PAPEL-removebg-preview (1).png"/>
+              <Image iconType="3" name="/resources/contenedorPapelAzul.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbPapelActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="370" y="240" width="-1" height="-1"/>
@@ -79,7 +91,7 @@
         <Component class="javax.swing.JButton" name="btnAnterior">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Bot&#xf3;n amarillo brillante &#xab;Anterior&#xbb; (1).png"/>
+              <Image iconType="3" name="/resources/botonAmarilloAnterior.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
@@ -92,7 +104,7 @@
         <Component class="javax.swing.JButton" name="btnSiguiente">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Bot&#xf3;n morado brillante &#x201c;Siguiente&#x201d; (3).png"/>
+              <Image iconType="3" name="/resources/botonMoradoSiguiente.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
@@ -105,7 +117,7 @@
         <Component class="javax.swing.JLabel" name="lblResiduos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/residuos plasticos_1.png"/>
+              <Image iconType="3" name="/resources/residuosPlasticos.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -133,7 +145,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Pradera colorida de cuento infantil.png"/>
+              <Image iconType="3" name="/resources/praderaInfantil.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>

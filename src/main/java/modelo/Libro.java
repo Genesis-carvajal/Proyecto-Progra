@@ -4,39 +4,45 @@
  */
 package modelo;
 
-import modelo.Pagina;
-/**
- *
- * @author Monserrath
- */
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 
 public class Libro {
-    private ArrayList<Pagina> paginas = new ArrayList<>();
 
-    public void agregarPagina(Pagina pagina) {
-        paginas.add(pagina);
+    private ArrayList<Pagina> arrayPaginas;
+
+    public Libro() {
+        arrayPaginas = new ArrayList<>();
     }
-<<<<<<< HEAD
-   
-    public String MostrarPags() {
-        String contenido = "";
-        for (int i = 0; i < Paginas.size(); i++) {
-            contenido += Paginas.get(i).mostrarContenido()+ "\n\n";
-           
+
+    public void agregarPagina(Pagina nuevaPagina) {
+        arrayPaginas.add(nuevaPagina);
+    }
+
+    public Pagina obtenerPagina(int posicion) {
+
+        if (posicion < 0 || posicion >= arrayPaginas.size()) {
+            JOptionPane.showMessageDialog(null, "La página no existe");
+            return null;
         }
-        return contenido;
-=======
->>>>>>> f8e1ab6dac1b2dab9e795983cf54d8eee27bf0bf
+
+        return arrayPaginas.get(posicion);
+    }
 
     public int cantidadPaginas() {
-        return paginas.size();
+        return arrayPaginas.size();
     }
 
-    public Pagina obtenerPagina(int posicion) throws PaginaNoExisteException {
-        if (posicion < 0 || posicion >= paginas.size()) {
-            throw new PaginaNoExisteException("Esa página no existe.");
+    public String mostrarTodasLasPaginas() {
+        String contenido = "";
+
+        for (int i = 0; i < arrayPaginas.size(); i++) {
+            contenido += arrayPaginas.get(i).mostrarContenido() + "\n\n";
         }
-        return paginas.get(posicion);
+
+        return contenido;
     }
-}
+    
+    
+}//class

@@ -4,52 +4,129 @@
  */
 package vista;
 
+import controlador.ControladorActividad;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 /**
  *
  * @author User
  */
 public class VistaActividad extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaActividad.class.getName());
 
     private Runnable accionAnterior;
-private Runnable accionSiguiente;
+    private Runnable accionSiguiente;
+
+    private ControladorActividad controlador;
+    private ButtonGroup grupo;
+
     /**
      * Creates new form Actividad
      */
     public VistaActividad() {
+
         initComponents();
-        javax.swing.ButtonGroup grupo = new javax.swing.ButtonGroup();
 
-grupo.add(rbPlastico);
-grupo.add(rbOrganico);
-grupo.add(rbPapel);
-    }
-    
-public void setAccionAnterior(Runnable accion) {
-    btnAnterior.addActionListener(e -> accion.run());
-}
+        grupo = new ButtonGroup();
 
-public void setAccionSiguiente(Runnable accion) {
-    btnSiguiente.addActionListener(e -> accion.run());
-}
+        grupo.add(rbPlastico);
+        grupo.add(rbOrganico);
+        grupo.add(rbPapel);
 
-public String getRespuestaSeleccionada() {
+        grupo.clearSelection();
 
-    if (rbPlastico.isSelected()) {
-        return "Plástico";
+        setLocationRelativeTo(null);
     }
 
-    if (rbOrganico.isSelected()) {
-        return "Orgánico";
+    public void setAccionAnterior(Runnable accion) {
+        btnAnterior.addActionListener(e -> accion.run());
     }
 
-    if (rbPapel.isSelected()) {
-        return "Papel";
+    public void setAccionSiguiente(Runnable accion) {
+        btnSiguiente.addActionListener(e -> accion.run());
     }
 
-    return null;
-}
+    public int getRespuestaSeleccionada() {
+
+        if (rbPlastico.isSelected()) {
+            return 1;
+        }
+
+        if (rbOrganico.isSelected()) {
+            return 2;
+        }
+
+        if (rbPapel.isSelected()) {
+            return 3;
+        }
+
+        return 0;
+    }
+
+    public void mostrarResiduo(String ruta) {
+
+        lblResiduos.setIcon(new ImageIcon(
+                getClass().getResource(ruta)));
+    }
+
+    public void limpiarRespuestas() {
+
+        grupo.clearSelection();
+        marcarSeleccion();
+    }
+
+    public void marcarSeleccion() {
+
+        rbPlastico.setBorderPainted(rbPlastico.isSelected());
+        rbOrganico.setBorderPainted(rbOrganico.isSelected());
+        rbPapel.setBorderPainted(rbPapel.isSelected());
+
+        rbPlastico.setBorder(
+                BorderFactory.createLineBorder(Color.YELLOW, 3));
+
+        rbOrganico.setBorder(
+                BorderFactory.createLineBorder(Color.YELLOW, 3));
+
+        rbPapel.setBorder(
+                BorderFactory.createLineBorder(Color.YELLOW, 3));
+    }
+
+    public void seleccionarRespuesta(int respuesta) {
+
+        grupo.clearSelection();
+
+        if (respuesta == 1) {
+            rbPlastico.setSelected(true);
+        }
+
+        if (respuesta == 2) {
+            rbOrganico.setSelected(true);
+        }
+
+        if (respuesta == 3) {
+            rbPapel.setSelected(true);
+        }
+
+        marcarSeleccion();
+    }
+
+    public void setControlador(ControladorActividad controlador) {
+        this.controlador = controlador;
+    }
+
+    public JButton getBtnAnterior() {
+        return btnAnterior;
+    }
+
+    public JButton getBtnSiguiente() {
+        return btnSiguiente;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,24 +151,30 @@ public String getRespuestaSeleccionada() {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbOrganico.setSelected(true);
-        rbOrganico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Contenedor_verde_de_reciclaje_orgánico-removebg-preview (1)_1.png"))); // NOI18N
+        rbOrganico.setContentAreaFilled(false);
+        rbOrganico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/contenedorOrganicoVerde.png"))); // NOI18N
+        rbOrganico.addActionListener(this::rbOrganicoActionPerformed);
         jPanel1.add(rbOrganico, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
 
-        rbPlastico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Contenedor_de_reciclaje_para_plástico__1_-removebg-preview (2).png"))); // NOI18N
+        rbPlastico.setContentAreaFilled(false);
+        rbPlastico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/contenedorAmarilloPlastico.png"))); // NOI18N
+        rbPlastico.addActionListener(this::rbPlasticoActionPerformed);
         jPanel1.add(rbPlastico, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
-        rbPapel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Contenedor_azul_de_reciclaje_PAPEL-removebg-preview (1).png"))); // NOI18N
+        rbPapel.setContentAreaFilled(false);
+        rbPapel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/contenedorPapelAzul.png"))); // NOI18N
+        rbPapel.addActionListener(this::rbPapelActionPerformed);
         jPanel1.add(rbPapel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
 
-        btnAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Botón amarillo brillante «Anterior» (1).png"))); // NOI18N
+        btnAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/botonAmarilloAnterior.png"))); // NOI18N
         btnAnterior.setContentAreaFilled(false);
         jPanel1.add(btnAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Botón morado brillante “Siguiente” (3).png"))); // NOI18N
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/botonMoradoSiguiente.png"))); // NOI18N
         btnSiguiente.setContentAreaFilled(false);
         jPanel1.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, -1, -1));
 
-        lblResiduos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/residuos plasticos_1.png"))); // NOI18N
+        lblResiduos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/residuosPlasticos.png"))); // NOI18N
         jPanel1.add(lblResiduos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
         lblPregunta1.setBackground(new java.awt.Color(153, 255, 153));
@@ -99,7 +182,7 @@ public String getRespuestaSeleccionada() {
         lblPregunta1.setText("¿Dónde reciclamos este residuo?");
         jPanel1.add(lblPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Pradera colorida de cuento infantil.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/praderaInfantil.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 420));
 
@@ -116,6 +199,18 @@ public String getRespuestaSeleccionada() {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rbPlasticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlasticoActionPerformed
+        marcarSeleccion();
+    }//GEN-LAST:event_rbPlasticoActionPerformed
+
+    private void rbOrganicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbOrganicoActionPerformed
+        marcarSeleccion();
+    }//GEN-LAST:event_rbOrganicoActionPerformed
+
+    private void rbPapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPapelActionPerformed
+        marcarSeleccion();
+    }//GEN-LAST:event_rbPapelActionPerformed
 
     /**
      * @param args the command line arguments

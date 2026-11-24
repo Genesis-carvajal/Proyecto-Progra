@@ -4,16 +4,12 @@
  */
 package vista;
 
-import controlador.ControladorSistema;
-
 /**
  *
  * @author carva
  */
 public class GUI_Juego extends javax.swing.JFrame {
-    private ControladorSistema controlador;
-    
-   
+
     /**
      * Creates new form GUI_Juego
      */
@@ -21,32 +17,31 @@ public class GUI_Juego extends javax.swing.JFrame {
         initComponents();
     }
 
-   public void setAccionJugar(Runnable accion) {
+    public void setAccionJugar(Runnable accion) {
 
-    btnJugar.setCursor(
-        new java.awt.Cursor(
-            java.awt.Cursor.HAND_CURSOR
-        )
-    );
+        btnJugar.setCursor(
+                new java.awt.Cursor(
+                        java.awt.Cursor.HAND_CURSOR
+                )
+        );
 
-    btnJugar.addMouseListener(
-        new java.awt.event.MouseAdapter() {
+        btnJugar.addMouseListener(
+                new java.awt.event.MouseAdapter() {
 
             @Override
             public void mouseClicked(
-                java.awt.event.MouseEvent e) {
+                    java.awt.event.MouseEvent e) {
 
                 accion.run();
             }
         }
-    );
-}
-    
+        );
+    }
+
     public void mostrarError(String mensaje) {
-    javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Aviso",
-            javax.swing.JOptionPane.WARNING_MESSAGE);
-}
-    
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Aviso",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,7 +78,7 @@ public class GUI_Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-   lblFondoram args the command line arguments
+     * lblFondoram args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

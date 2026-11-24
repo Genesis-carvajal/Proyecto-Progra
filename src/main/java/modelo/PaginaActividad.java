@@ -10,17 +10,17 @@ import javax.swing.JOptionPane;
  *
  * @author carva
  */
-public abstract class PaginaActividad extends Pagina{
+public class PaginaActividad extends Pagina{
     
     public PaginaActividad(String titulo, int numeroPagina, String contenido) {
         super(titulo, numeroPagina, contenido);
     }
     
     @Override
-    public String mostrarContenido(){
-        //Orden dada al usuario.
-        return  "Pagina " + getNumeroPagina() + ": " + getTitulo()
+    public String mostrarContenido() {
+
+        return "Página " + getNumeroPagina() + ": " + getTitulo()
                 + "\n\n" + getContenido()
-                + "\n\nPresione RESPONDER para contestar tres preguntas.";
+                + "\n\nPresione RESPONDER para clasificar los residuos.";
     }
 }

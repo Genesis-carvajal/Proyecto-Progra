@@ -8,7 +8,7 @@ package modelo;
  *
  * @author carva
  */
-public abstract class PaginaInformativa extends Pagina{
+public class PaginaInformativa extends Pagina{
     
     //Constructor.
     public PaginaInformativa(String titulo, int numeroPagina, String contenido) {

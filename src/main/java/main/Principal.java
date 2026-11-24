@@ -4,7 +4,7 @@
 
 package main;
 
-import controlador.ControladorSistema;
+import vista.VistaPrincipal;
 
 /**
  *
@@ -13,10 +13,9 @@ import controlador.ControladorSistema;
 public class Principal {
 
     public static void main(String[] args) {
-       
-        ControladorSistema controlador = new ControladorSistema();
 
-        controlador.Iniciar();
+        VistaPrincipal vista = new VistaPrincipal();
+        vista.setVisible(true);
 
     }
 

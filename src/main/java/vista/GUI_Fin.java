@@ -4,33 +4,26 @@
  */
 package vista;
 
-import controlador.ControladorSistema;
-
 /**
  *
  * @author carva
  */
 public class GUI_Fin extends javax.swing.JFrame {
-    private ControladorSistema controlador;
-   
+
     /**
      * Creates new form GUI_Fin
      */
     public GUI_Fin() {
         initComponents();
     }
-    public void setAccionMenuPrincipal(Runnable accion) {
-    btnMenuPrincipal.addActionListener(e -> accion.run());
-}
 
-public void setAccionVolverJugar(Runnable accion) {
-    btnVolveraJugar.addActionListener(e -> accion.run());
-}
-    
-    public void setControlador(ControladorSistema controlador) {
-        this.controlador = controlador;
+    public void setAccionMenuPrincipal(Runnable accion) {
+        btnMenuPrincipal.addActionListener(e -> accion.run());
     }
-    
+
+    public void setAccionVolverJugar(Runnable accion) {
+        btnVolveraJugar.addActionListener(e -> accion.run());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
