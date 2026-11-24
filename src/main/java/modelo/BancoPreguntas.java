@@ -10,7 +10,6 @@ package modelo;
  */
 public class BancoPreguntas {
      //  BancoPreguntas
-    //Arreglo tipo bidimensional tipo Pregunta.
     private Pagina[][] pagina = new Pagina[3][3];
     
         public BancoPreguntas() {
@@ -34,7 +33,16 @@ public class BancoPreguntas {
     }
     
     //Recibir preguntas de CLASE pREGUNTA
-    public Pagina obtenerPregunta(int capitulo, int numeroPregunta){
-        return pagina[capitulo][numeroPregunta];
+    public Pagina obtenerPregunta(int capitulo, int numeroPregunta) throws PaginaNoExisteException {
+    if (capitulo < 0 || capitulo >= pagina.length
+            || numeroPregunta < 0 || numeroPregunta >= pagina[capitulo].length) {
+        throw new PaginaNoExisteException("Esa pregunta no existe.");
     }
+    if (pagina[capitulo][numeroPregunta] == null) {
+        throw new PaginaNoExisteException("Esa pregunta todavía no está cargada.");
+    }
+    return pagina[capitulo][numeroPregunta];
+}
+    
+    
 }
