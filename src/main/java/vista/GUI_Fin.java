@@ -19,6 +19,13 @@ public class GUI_Fin extends javax.swing.JFrame {
     public GUI_Fin() {
         initComponents();
     }
+    public void setAccionMenuPrincipal(Runnable accion) {
+    btnMenuPrincipal.addActionListener(e -> accion.run());
+}
+
+public void setAccionVolverJugar(Runnable accion) {
+    btnVolveraJugar.addActionListener(e -> accion.run());
+}
     
     public void setControlador(ControladorSistema controlador) {
         this.controlador = controlador;
@@ -35,79 +42,57 @@ public class GUI_Fin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblFelicitaciones = new javax.swing.JLabel();
-        lblImagen = new javax.swing.JLabel();
-        lblPuntuacion = new javax.swing.JLabel();
-        btnReiniciar = new javax.swing.JButton();
-        btnMenu = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnMenuPrincipal = new javax.swing.JButton();
+        lblInformacion = new javax.swing.JLabel();
+        lblAbeja = new javax.swing.JLabel();
+        btnVolveraJugar = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblFelicitaciones.setText("lo lograste");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblImagen.setText("Imagen");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/66dbcbb7f70864efa5e4e8097e865a28-removebg-preview (2).png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
 
-        lblPuntuacion.setText("puntuacion");
+        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Botón azul brillante de menú principal (2).png"))); // NOI18N
+        btnMenuPrincipal.setContentAreaFilled(false);
+        jPanel1.add(btnMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
 
-        btnReiniciar.setText("Volver a jugar");
+        lblInformacion.setBackground(new java.awt.Color(231, 231, 210));
+        lblInformacion.setForeground(new java.awt.Color(243, 240, 217));
+        lblInformacion.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(181, 82, 9), null));
+        jPanel1.add(lblInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 440, 140));
 
-        btnMenu.setText("menu");
-        btnMenu.addActionListener(this::btnMenuActionPerformed);
+        lblAbeja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Cheerful_Flying_Bee_Mascot-removebg-preview (3).png"))); // NOI18N
+        jPanel1.add(lblAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPuntuacion)
-                    .addComponent(lblImagen)
-                    .addComponent(lblFelicitaciones))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(btnReiniciar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addComponent(btnMenu)
-                .addGap(87, 87, 87))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFelicitaciones)
-                .addGap(39, 39, 39)
-                .addComponent(lblImagen)
-                .addGap(49, 49, 49)
-                .addComponent(lblPuntuacion)
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReiniciar)
-                    .addComponent(btnMenu))
-                .addContainerGap(80, Short.MAX_VALUE))
-        );
+        btnVolveraJugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Botón verde brillante “Volver a jugar” (1).png"))); // NOI18N
+        btnVolveraJugar.setContentAreaFilled(false);
+        jPanel1.add(btnVolveraJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Pradera colorida de cuento infantil.png"))); // NOI18N
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 832));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMenuActionPerformed
-
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMenu;
-    private javax.swing.JButton btnReiniciar;
+    private javax.swing.JButton btnMenuPrincipal;
+    private javax.swing.JButton btnVolveraJugar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblFelicitaciones;
-    private javax.swing.JLabel lblImagen;
-    private javax.swing.JLabel lblPuntuacion;
+    private javax.swing.JLabel lblAbeja;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblInformacion;
     // End of variables declaration//GEN-END:variables
 }

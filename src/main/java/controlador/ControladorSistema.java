@@ -6,45 +6,48 @@ package controlador;
 
 import vista.GUI_Fin;
 import vista.GUI_Juego;
-import vista.GUI_Menu;
+import vista.VistaActividad;
 
-/**
- *
- * @author carva
- */
-public class ControladorSistema {
-    //Llamar a la clase con ArrayList
+
     
     //LLamar a las vistas
-    private GUI_Menu menu = new GUI_Menu();
-    private GUI_Juego juego = new GUI_Juego();
-    private GUI_Fin fin = new GUI_Fin();
+   public class ControladorSistema {
 
-    //Conexión a las vistas del proyecto.
+    // Llamar a las ventanas del proyecto
+    private GUI_Juego juego = new GUI_Juego();
+    private VistaActividad actividad = new VistaActividad();
+
+    // Constructor del controlador
     public ControladorSistema() {
-        menu.setControlador(this);
-        juego.setControlador(this);
-        fin.setControlador(this);
-    }//Fin del constructor.
-    
-    public void Iniciar(){
-        menu.setLocationRelativeTo(null); //Nos permite que al ejecutar el juego se centre la ventana.
-        menu.setVisible(true); //Un método que hace que se vea la ventana sí es true.
-    }//Fin del método Iniciar.
-    
-    public void Salir(){
-        System.exit(0);
-    }//Fin del método Salir.
-    
-    public void abrirJuego(){
-        menu.setVisible(false);
+
+        // Conectar la acción de jugar
+        juego.setAccionJugar(() -> abrirPrimeraActividad());
+
+    }
+
+    // Método para iniciar el programa
+    public void Iniciar() {
+
         juego.setLocationRelativeTo(null);
         juego.setVisible(true);
-    }//Fin del método abrirJuego.
-    
-    public void menuAnterior(){
-        GUI_Juego volver = new GUI_Juego();
-        
-    }//Fin del método menuAnterior.
-    
-}//Fin de la clase ControladorSistema.
+
+    }
+
+    // Método para abrir la primera actividad
+    public void abrirPrimeraActividad() {
+
+        juego.setVisible(false);
+
+        actividad.setLocationRelativeTo(null);
+        actividad.setVisible(true);
+
+    }
+
+    // Método para salir del programa
+    public void Salir() {
+
+        System.exit(0);
+
+    }
+
+}

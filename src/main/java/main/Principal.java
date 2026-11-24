@@ -13,7 +13,11 @@ import controlador.ControladorSistema;
 public class Principal {
 
     public static void main(String[] args) {
+       
         ControladorSistema controlador = new ControladorSistema();
+
         controlador.Iniciar();
+
     }
+
 }

@@ -21,9 +21,26 @@ public class GUI_Juego extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void setControlador(ControladorSistema controlador) {
-        this.controlador = controlador;
-    }
+   public void setAccionJugar(Runnable accion) {
+
+    btnJugar.setCursor(
+        new java.awt.Cursor(
+            java.awt.Cursor.HAND_CURSOR
+        )
+    );
+
+    btnJugar.addMouseListener(
+        new java.awt.event.MouseAdapter() {
+
+            @Override
+            public void mouseClicked(
+                java.awt.event.MouseEvent e) {
+
+                accion.run();
+            }
+        }
+    );
+}
     
 
     /**
@@ -35,101 +52,39 @@ public class GUI_Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblIcono = new javax.swing.JLabel();
-        lblTexto = new javax.swing.JLabel();
-        btnOrganico = new javax.swing.JButton();
-        btnPapel = new javax.swing.JButton();
-        btnPlastico = new javax.swing.JButton();
-        btnPausa = new javax.swing.JButton();
-        pnlPreguntas = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnJugar = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblIcono.setText("loopi");
+        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/loopi 3.png"))); // NOI18N
+        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, -1, -1));
 
-        lblTexto.setText("jLabel1");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/abeja 1.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
-        btnOrganico.setText("organico");
+        btnJugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/jugar1.png"))); // NOI18N
+        btnJugar.setContentAreaFilled(false);
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
 
-        btnPapel.setText("papel");
-
-        btnPlastico.setText("plastico");
-
-        btnPausa.setText("pausa");
-
-        javax.swing.GroupLayout pnlPreguntasLayout = new javax.swing.GroupLayout(pnlPreguntas);
-        pnlPreguntas.setLayout(pnlPreguntasLayout);
-        pnlPreguntasLayout.setHorizontalGroup(
-            pnlPreguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        pnlPreguntasLayout.setVerticalGroup(
-            pnlPreguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblIcono)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPausa))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(lblTexto))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(btnPlastico)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOrganico)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPapel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(pnlPreguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIcono)
-                    .addComponent(btnPausa))
-                .addGap(34, 34, 34)
-                .addComponent(lblTexto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(pnlPreguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOrganico)
-                    .addComponent(btnPapel)
-                    .addComponent(btnPlastico))
-                .addGap(75, 75, 75))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Pradera colorida de cuento infantil.png"))); // NOI18N
+        lblFondo.setText("jLabel1");
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 630, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * @param args the command line arguments
+   lblFondoram args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOrganico;
-    private javax.swing.JButton btnPapel;
-    private javax.swing.JButton btnPausa;
-    private javax.swing.JButton btnPlastico;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblIcono;
-    private javax.swing.JLabel lblTexto;
-    private javax.swing.JPanel pnlPreguntas;
+    private javax.swing.JButton btnJugar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
 }

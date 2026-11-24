@@ -33,7 +33,7 @@ public class Libro {
     public String MostrarPags() {
         String contenido = "";
         for (int i = 0; i < Paginas.size(); i++) {
-            contenido += Paginas.get(i).MostrarContenido()+ "\n\n";
+            contenido += Paginas.get(i).mostrarContenido()+ "\n\n";
            
         }
         return contenido;
